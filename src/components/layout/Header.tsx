@@ -10,7 +10,7 @@ const Header = () => {
       <div className="container flex justify-between items-center h-16 px-4">
         {/* Logo */}
         <Link to="/" className="text-xl font-bold">
-          CarMod
+          
         </Link>
         
         {/* Desktop Search - Hidden on mobile, shown on desktop */}

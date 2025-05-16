@@ -28,7 +28,7 @@ const SettingsSearch = () => {
     const term = e.target.value.toLowerCase();
     setSearchTerm(term);
     
-    if (term.length > 1) {
+    if (term.length > 0) {
       const filteredResults = settingsOptions.filter(option => 
         option.title.toLowerCase().includes(term) || 
         option.keywords.some(keyword => keyword.includes(term))

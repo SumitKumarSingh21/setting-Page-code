@@ -4,7 +4,7 @@ import { Link, Outlet, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { 
   Edit, Settings, Shield, Bell, Bookmark, 
-  List, Car, Languages, HelpCircle, Bug, LogOut 
+  List, Car, Languages, HelpCircle, Bug, LogOut, ArrowLeft
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
@@ -101,7 +101,12 @@ const SettingsLayout = () => {
         {/* Sidebar */}
         <aside className="w-full md:w-1/4 space-y-6">
           <div className="sticky top-6">
-            <h2 className="text-2xl font-bold mb-6">Settings</h2>
+            <div className="flex items-center gap-2 mb-6">
+              <Link to="/" className="text-foreground hover:text-primary">
+                <ArrowLeft className="h-5 w-5" />
+              </Link>
+              <h2 className="text-2xl font-bold">Settings</h2>
+            </div>
             <nav className="space-y-1">
               {settingsNavItems.map((item) => (
                 <Link 
