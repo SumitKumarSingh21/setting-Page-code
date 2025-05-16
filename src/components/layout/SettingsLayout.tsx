@@ -102,9 +102,9 @@ const SettingsLayout = () => {
         <aside className="w-full md:w-1/4 space-y-6">
           <div className="sticky top-6">
             <div className="flex items-center gap-2 mb-6">
-              <Link to="/" className="text-foreground hover:text-primary">
+              <span className="text-foreground">
                 <ArrowLeft className="h-5 w-5" />
-              </Link>
+              </span>
               <h2 className="text-2xl font-bold">Settings</h2>
             </div>
             <nav className="space-y-1">
