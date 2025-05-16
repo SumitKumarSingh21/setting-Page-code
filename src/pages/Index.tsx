@@ -1,9 +1,9 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Edit, Settings, Shield, Bell, Bookmark, List, Car, Languages, HelpCircle, Bug } from 'lucide-react';
+import SettingsSearch from '@/components/settings/SettingsSearch';
 
 const Index = () => {
   // Dashboard sections
@@ -73,21 +73,16 @@ const Index = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="text-center mb-10">
-        <h1 className="text-3xl md:text-4xl font-bold mb-4">Welcome to CarMod</h1>
-        <p className="text-muted-foreground max-w-2xl mx-auto">
-          Your one-stop platform for car customization, community engagement, and professional automotive services.
+        <h1 className="text-3xl md:text-4xl font-bold mb-4">CarMod Settings</h1>
+        <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
+          Find all your account, privacy, and app settings in one place
         </p>
+        
+        {/* Settings Search Component */}
+        <SettingsSearch />
       </div>
 
-      <div className="flex justify-center mb-10">
-        <Link to="/settings">
-          <Button size="lg" className="font-semibold px-8">
-            Go to Settings
-          </Button>
-        </Link>
-      </div>
-
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mt-8">
         {settingsSections.map((section) => (
           <Link to={section.path} key={section.title}>
             <Card className="h-full hover:shadow-md transition-shadow">
