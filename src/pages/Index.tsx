@@ -71,31 +71,33 @@ const Index = () => {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="text-center mb-10">
-        <h1 className="text-3xl md:text-4xl font-bold mb-4">CarMod Settings</h1>
-        <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
+    <div className="container mx-auto px-4 py-6 md:py-8">
+      <div className="text-center mb-6 md:mb-10">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4">CarMod Settings</h1>
+        <p className="text-muted-foreground text-sm md:text-base max-w-2xl mx-auto mb-6 md:mb-8">
           Find all your account, privacy, and app settings in one place
         </p>
         
-        {/* Settings Search Component */}
-        <SettingsSearch />
+        {/* Settings Search Component - Full width on mobile */}
+        <div className="px-2 md:px-0">
+          <SettingsSearch />
+        </div>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mt-8">
+      <div className="grid gap-4 md:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 md:mt-8">
         {settingsSections.map((section) => (
           <Link to={section.path} key={section.title}>
             <Card className="h-full hover:shadow-md transition-shadow">
-              <CardHeader className="flex flex-row items-center gap-4 pb-2">
+              <CardHeader className="flex flex-row items-center gap-3 md:gap-4 pb-2">
                 <div className="bg-primary/10 p-2 rounded-md">
-                  <section.icon className="h-5 w-5 text-primary" />
+                  <section.icon className="h-4 w-4 md:h-5 md:w-5 text-primary" />
                 </div>
                 <div>
-                  <CardTitle className="text-lg">{section.title}</CardTitle>
+                  <CardTitle className="text-base md:text-lg">{section.title}</CardTitle>
                 </div>
               </CardHeader>
               <CardContent>
-                <CardDescription>{section.description}</CardDescription>
+                <CardDescription className="text-xs md:text-sm">{section.description}</CardDescription>
               </CardContent>
             </Card>
           </Link>

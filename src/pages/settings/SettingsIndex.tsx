@@ -2,7 +2,7 @@
 import { Navigate } from 'react-router-dom';
 
 const SettingsIndex = () => {
-  return <Navigate to="/" replace />;
+  return <Navigate to="/settings" replace />;
 };
 
 export default SettingsIndex;

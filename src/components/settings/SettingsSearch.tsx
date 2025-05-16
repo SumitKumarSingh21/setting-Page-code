@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Input } from '@/components/ui/input';
 import { Card } from '@/components/ui/card';
+import { Search } from 'lucide-react';
 
 // Define settings categories and their paths
 const settingsOptions = [
@@ -46,19 +47,22 @@ const SettingsSearch = () => {
 
   return (
     <div className="relative w-full max-w-md mx-auto">
-      <Input 
-        value={searchTerm}
-        onChange={handleSearch}
-        placeholder="Search for settings (e.g., profile, privacy, theme...)" 
-        className="w-full"
-      />
+      <div className="relative">
+        <Input 
+          value={searchTerm}
+          onChange={handleSearch}
+          placeholder="Search for settings (e.g., profile, theme...)" 
+          className="w-full pl-9"
+        />
+        <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+      </div>
       
       {results.length > 0 && (
-        <Card className="absolute z-10 w-full mt-1 p-2 max-h-[300px] overflow-y-auto">
+        <Card className="absolute z-10 w-full mt-1 p-2 max-h-[300px] overflow-y-auto shadow-lg">
           {results.map((result) => (
             <div 
               key={result.path} 
-              className="p-2 hover:bg-muted rounded cursor-pointer"
+              className="p-2 hover:bg-muted rounded cursor-pointer text-left text-sm md:text-base"
               onClick={() => goToSetting(result.path)}
             >
               {result.title}
